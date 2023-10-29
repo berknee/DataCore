@@ -511,25 +511,6 @@ header .container{
     }
 }
 
- @media screen and (max-width: 540px) {
-    .container {
-      padding: 0 1.5rem;
-    }
-
-    #features .container .row{
-        grid-template-columns: revert;
-        grid-template-columns: 1fr;
-    }
-
-    .leftCircle{
-        clip-path: circle(10050px at right 500px);
-    }
-    .socialMediaIcons{
-        padding-top: 50px;
-    }
-  
-  }
-
 @media screen and (max-width: 870px) {
 
     .hamburgerMenu {
@@ -624,9 +605,25 @@ header .container{
         height: auto;
         width: 220px;
     }
+  }
 
+@media (max-width: 540px) {
+    .container {
+      padding: 0 1.5rem;
+    }
 
+    #features .container .row{
+        grid-template-columns: revert;
+        grid-template-columns: 1fr;
+    }
 
+    .leftCircle{
+        clip-path: circle(10050px at right 500px);
+    }
+    .socialMediaIcons{
+        padding-top: 50px;
+    }
+  
   }
   
 
