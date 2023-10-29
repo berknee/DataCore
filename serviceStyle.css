@@ -615,8 +615,27 @@ header .container{
       padding: 0 1.5rem;
     }
 
+    #features .container .row{
+        grid-template-columns: revert;
+        grid-template-columns: 1fr;
+    }
+
     .leftCircle{
         clip-path: circle(550px at right 1000px);
+    }
+  
+  }
+
+  @media screen and (max-width: 515px) {
+    .container {
+      padding: 0 1.5rem;
+    }
+
+    .leftCircle{
+        clip-path: circle(10050px at right 500px);
+    }
+    .socialMediaIcons{
+        padding-top: 50px;
     }
   
   }
