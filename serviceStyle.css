@@ -511,7 +511,7 @@ header .container{
     }
 }
 
- @media screen and (width <= 540px) {
+ @media screen and (max-width: 540px) {
     .container {
       padding: 0 1.5rem;
     }
