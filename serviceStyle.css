@@ -327,7 +327,7 @@ header .container{
     padding-bottom: 25px;
     padding-left: 10px;
     padding-right: 10px;
-    border-radius: 5px;
+    border-radius: 25px;
     font-size: 14px;
     cursor: pointer;
     background: var(--mainColor);
