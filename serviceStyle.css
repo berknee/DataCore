@@ -334,6 +334,14 @@ header .container{
     transition: transform 0.5s, background 0.5s !important;
 }
 
+#features .container .row .service p{
+    color: transparent;
+}
+
+#features .container .row .service:hover p{
+    color: revert;
+}
+
 #features .container .row .service i{
     font-size: 40px;
     margin-bottom: 10px;
@@ -354,6 +362,8 @@ header .container{
 #features .container .row .service:hover i{
     color: #fff;
 }
+
+
 
 .planSection{
     z-index: 10;
