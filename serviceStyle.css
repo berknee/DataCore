@@ -521,6 +521,19 @@ header .container{
     }
 }
 
+@media (max-width: 1245px){
+    #features .container .row{
+        grid-gap: revert;
+        grid-row-gap: 15px;
+        grid-column-gap: 5px;
+    }
+    
+    #features .container .row .service{
+        margin-left: 10px;
+        width: 95%;
+    }
+}
+
 @media screen and (max-width: 870px) {
 
     .hamburgerMenu {
@@ -616,19 +629,6 @@ header .container{
         width: 220px;
     }
   }
-
-@media (max-width: 1000px){
-    #features .container .row{
-        grid-gap: revert;
-        grid-row-gap: 15px;
-        grid-column-gap: 5px;
-    }
-    
-    #features .container .row .service{
-        margin-left: 10px;
-        width: 95%;
-    }
-}
 
 @media (max-width: 540px) {
     .container {
