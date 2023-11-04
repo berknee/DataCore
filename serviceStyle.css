@@ -521,7 +521,7 @@ header .container{
     }
 }
 
-@media (max-width: 1245px){
+@media (max-width: 1310px){
     #features .container .row{
         grid-gap: revert;
         grid-row-gap: 15px;
