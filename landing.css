@@ -46,6 +46,7 @@ body{
 }
 
 .title .typeWriter h1{
+    margin-inline-end: 50px !important;
     animation: typing 1s steps(25), blink 1s infinite;
     letter-spacing: 4px;
     overflow: hidden;
