@@ -8,6 +8,7 @@
     --darkTwo: #45424b;
     --lightOne: #919191;
     --lightTwo: #aaa;
+    --lightThree: #615c5c;
     --circle: #b7d2f5;
 }
 
@@ -19,6 +20,7 @@
     --darkTwo: #fff;
     --lightOne: #ccc;
     --lightTwo: #e7e3e3;
+    --lightThree: #ccc;
     --circle: #213c4dff;
 }
 
@@ -260,6 +262,18 @@ header .container{
     margin: 1.9rem 0 2.5rem;
     max-width: 600px;
     line-height: 2.3;
+}
+
+.disclaimer em{
+    display: flex;
+    color: var(--lightThree);
+    font-size: 1.1rem;
+    line-height: 2.3;
+    align-items: center;
+    justify-content: center;
+    z-index: 66;
+    position: relative;
+    text-align: center;
 }
 
 .showCaseArea .button{
