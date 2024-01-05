@@ -21,7 +21,7 @@
     --darkTwo: #fff;
     --lightOne: #ccc;
     --lightTwo: #e7e3e3;
-    --lightThree: #dfe2f1;
+    --lightThree: #d1d4dd;
     --circle: #213c4dff;
 }
 
@@ -68,13 +68,13 @@ a{
 
 .socialMediaIcons{
     position: absolute;
-    top: 50%;
+    top: 95%;
     right: 30px;
     transform: translateY(-50%);
     display: flex;
     justify-content: center;
     align-items: center;
-    flex-direction: column;
+    flex-direction: row;
     z-index: 20;
 }
 
@@ -372,11 +372,12 @@ header .container{
 
 .planSection{
     z-index: 10;
+    margin-bottom: 50px;
 }
 
 .planSection h1.title{
     text-align: center;
-    padding-top: 10%;
+    padding-top: 50px;
     margin-bottom: 60px;
     font-weight: 600;
     position: relative;
