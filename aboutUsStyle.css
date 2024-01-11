@@ -1,5 +1,15 @@
 @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500&family=Poppins:wght@200;300;400;500;600;700;800&display=swap');
 
+@font-face {
+    font-family: 'GARET';
+    src: url("resources/Garet-Book.ttf") format("truetype");
+}
+
+@font-face {
+    font-family: 'GHeavy';
+    src: url("resources/Garet-Heavy.ttf") format("truetype");
+}
+
 .light{
     --mainColor: #64bcf4;
     --hoverColor: #5bacdf;
@@ -149,7 +159,7 @@ header .container{
 
 .navButtons a{
     color: var(--lightTwo);
-    margin-left: 4.5rem;
+    margin-left: 3rem;
     display: inline-block;
     transition: 0.3s;
 }
@@ -227,6 +237,7 @@ header .container{
 }
 
 .toggleBtn{
+    margin-top: 20px;
     display: inline-block;
     border: none;
     background-color: var(--darkTwo);
@@ -294,8 +305,7 @@ header .container{
 
 #aboutSection .aboutMain{
     display: flex;
-    align-items: center;
-    justify-content: space-around;
+    justify-content: space-evenly;
 }
 
 #aboutSection .aboutMain .image img{
@@ -313,24 +323,53 @@ header .container{
 
 #aboutSection .aboutMain .aboutText
 { 
-    width: 1000px;
+    width: auto;
+    text-align: center;
+    margin-top: 30px;
+    border-radius: 31px;
+    background: #e0e0e0;
+    box-shadow: 12px 12px 33px #c1c1c1, -12px -12px 33px #ffffff;
 }
 
-#aboutSection .aboutMain .aboutText h1{
+.dark #aboutSection .aboutMain .aboutText
+{
+    width: auto;
+    text-align: center;
+    margin-top: 30px;
+    border-radius: 31px;
+    background: rgb(72, 98, 115);
+    box-shadow: revert;
+}
+
+.dark #aboutSection .aboutMain .aboutText p{
+    color: (var(--lightOne));
+}
+
+#aboutSection h1{
     font-size: 2.4rem !important;
     margin-top: 100px;
     color: var(--darkOne);
+    font-family: 'Poppins', sans-serif;
+    text-align: center;
 }
 
+#aboutSection .aboutMain .aboutText h1{
+    font-size: 1.4rem !important;
+    margin-top: 100px;
+    color: var(--darkOne);
+    font-family: 'Poppins', sans-serif;
+}
 
 #aboutSection .aboutMain .aboutText p{
-    font-weight: 500;
+    font-weight: 600;
     font-size: 1.01rem;
     margin: 1.9rem 0 2.5rem;
-    padding-right: 90px;
     max-width: 600px;
     line-height: 2.1;
     color: var(--darkTwo);
+    font-family: "Garet";
+    padding-left: 10px;
+    padding-right: 10px;
 }
 
 @keyframes appear{
@@ -339,6 +378,13 @@ header .container{
     }
     100%{
         clip-path: circle(150% at 0 0);
+    }
+}
+
+@media (max-width: 1200px) {
+    #aboutSection .aboutMain{
+        display: flex;
+        flex-wrap: wrap;
     }
 }
 
@@ -461,6 +507,7 @@ header .container{
         justify-content: space-around;
         align-items: center;
         text-align: center;
+        flex-direction: column;
     }
 
     #aboutSection .aboutMain .aboutText p{

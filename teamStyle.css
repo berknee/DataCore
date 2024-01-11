@@ -1,5 +1,15 @@
 @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500&family=Poppins:wght@200;300;400;500;600;700;800&display=swap');
 
+@font-face {
+    font-family: 'GARET';
+    src: url("resources/Garet-Book.ttf") format("truetype");
+}
+
+@font-face {
+    font-family: 'GHeavy';
+    src: url("resources/Garet-Heavy.ttf") format("truetype");
+}
+
 .light{
     --mainColor: #64bcf4;
     --hoverColor: #5bacdf;
@@ -151,7 +161,7 @@ header .container{
 
 .navButtons a{
     color: var(--lightTwo);
-    margin-left: 4.5rem;
+    margin-left: 3rem;
     display: inline-block;
     transition: 0.3s;
 }
@@ -349,6 +359,7 @@ header .container{
 #team .card p{
     color: orangered;
     text-align: center;
+    font-family: "Garet";
 }
 
 #team .swiper-container{
