@@ -1,5 +1,15 @@
 @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500&family=Poppins:wght@200;300;400;500;600;700;800&display=swap');
 
+@font-face {
+    font-family: 'GARET';
+    src: url("resources/Garet-Book.ttf") format("truetype");
+}
+
+@font-face {
+    font-family: 'GHeavy';
+    src: url("resources/Garet-Heavy.ttf") format("truetype");
+}
+
 .light{
     --mainColor: #64bcf4;
     --hoverColor: #5bacdf;
@@ -37,6 +47,7 @@
     -moz-user-select: none;
     -ms-user-select: none;
     user-select: none;
+    z-index: 1;
 }
 
 body{
@@ -132,7 +143,7 @@ header .container{
 }
 
 .logo img{
-    width: 55px;
+    width: 50px;
     margin-right: 0.6rem;
     margin-top: -0.6rem;
     padding-top: 8px;
@@ -153,7 +164,7 @@ header .container{
 
 .navButtons a{
     color: var(--lightTwo);
-    margin-left: 4.5rem;
+    margin-left: 3rem;
     display: inline-block;
     transition: 0.3s;
 }
@@ -242,6 +253,7 @@ header .container{
     border-radius: 50%;
     font-size: 1.1rem;
     transition: 0.3s;
+    margin-top: 20px;
 }
 
 .toggleBtn i{
@@ -298,10 +310,26 @@ header .container{
 #features .container h1{
     text-align: center;
     padding-top: 70px;
-    margin-bottom: 60px;
     font-weight: 600;
+    margin-bottom: 10px;
     position: relative;
     color: var(--darkOne);
+    font-family: 'Poppins', sans-serif;
+}
+
+#features .container .planLink{
+    color: var(--darkOne);
+    text-decoration: none;
+    font-size: small;
+    text-align: center;
+    margin-bottom: 60px;
+}
+
+#features .container .planLink:hover{
+    font-size: medium;
+    text-align: center;
+    margin-bottom: 60px;
+    
 }
 
 #features .container h1:after{
@@ -336,6 +364,7 @@ header .container{
 
 #features .container .row .service p{
     color: transparent;
+    font-family: "Garet";
 }
 
 #features .container .row .service:hover p{
@@ -371,7 +400,6 @@ header .container{
 
 
 .planSection{
-    z-index: 10;
     margin-bottom: 50px;
 }
 
@@ -382,6 +410,7 @@ header .container{
     font-weight: 600;
     position: relative;
     color: var(--darkOne);
+    font-family: 'Poppins', sans-serif;
 }
 
 .planSection h1.title:after{
@@ -459,6 +488,7 @@ header .container{
     padding-left: 25px;
     position: relative;
     font-size: 0.9em;
+    font-family: "Garet";
 }
 
 .planFeature:not(:last-child){
@@ -524,6 +554,28 @@ header .container{
     }
     100%{
         clip-path: circle(150% at 0 0);
+    }
+}
+
+@media (max-width: 1200px){
+    #features .container .row .service{
+        width: 250px;
+        height: 230px;
+    }
+}
+
+@media (max-width: 1100px){
+    #features .container .row{
+        grid-template-columns: 1fr 1fr;
+        justify-content: space-between;
+        grid-gap: revert;
+        grid-row-gap: 15px;
+        grid-column-gap: 5px;
+    }
+    
+    #features .container .row .service{
+        width: 350px;
+        margin: auto;
     }
 }
 
@@ -619,23 +671,16 @@ header .container{
 
     #features .container .row .service{
         height: auto;
-        width: 220px;
+        width: 320px;
     }
   }
 
-@media (max-width: 1000px){
+@media (max-width: 700px){
     #features .container .row{
-        grid-gap: revert;
-        grid-row-gap: 15px;
-        grid-column-gap: 5px;
-    }
-    
-    #features .container .row .service{
-        margin-left: 10px;
-        width: 95%;
+        grid-template-columns: 1fr;
+        justify-items: center;
     }
 }
-
 @media (max-width: 540px) {
     .container {
       padding: 0 1.5rem;
