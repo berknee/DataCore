@@ -31,6 +31,7 @@
     --lightTwo: #e7e3e3;
     --circle: #213c4dff;
 }
+
 *,
 *::before,
 *::after{
@@ -49,6 +50,10 @@ body{
     font-family: 'Poppins', sans-serif;
 }
 
+.overlay{
+    display: none;
+}
+
 .stopScrolling{
     height: 100%;
     overflow: hidden;
@@ -62,38 +67,6 @@ a{
     text-decoration: none;
 }
 
-.leftCircle{
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: var(--circle);
-    clip-path: circle(600px at right 800px);
-}
-
-.socialMediaIcons{
-    position: absolute;
-    top: 50%;
-    right: 30px;
-    transform: translateY(-50%);
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-    z-index: 11;
-}
-
-.socialMediaIcons li{
-    list-style: none;
-}
-
-.socialMediaIcons li a{
-    display: inline-block;
-    margin: 5px 0;
-    transform: scale(0.6);
-}
-
 .landingPage{
     position: relative;
     padding: 1.7rem 0 2rem;
@@ -103,7 +76,6 @@ a{
     background-color: var(--backgroundColor);
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
 }
 
 .container{
@@ -236,8 +208,48 @@ header .container{
     transform: scale(1) !important;
 }
 
+.shape{
+    position: absolute;
+    z-index: 0;
+    width: 500px;
+    bottom: -180px;
+    left: -15px;
+    opacity: 0.1;
+}
+
+.leftCircle{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: var(--circle);
+    clip-path: circle(600px at right 800px);
+}
+
+.socialMediaIcons{
+    position: absolute;
+    top: 50%;
+    right: 30px;
+    transform: translateY(-50%);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    z-index: 10;
+}
+
+.socialMediaIcons li{
+    list-style: none;
+}
+
+.socialMediaIcons li a{
+    display: inline-block;
+    margin: 5px 0;
+    transform: scale(0.6);
+}
+
 .toggleBtn{
-    margin-top: 20px;
     display: inline-block;
     border: none;
     background-color: var(--darkTwo);
@@ -279,15 +291,6 @@ header .container{
     display: none;
 }
 
-.shape{
-    position: absolute;
-    z-index: 0;
-    width: 500px;
-    bottom: -180px;
-    left: -15px;
-    opacity: 0.1;
-}
-
 .copy{
     position: absolute;
     top: 0;
@@ -297,79 +300,161 @@ header .container{
 }
 
 #aboutSection{
+    background-color: var(--backgroundColor);
+    overflow: hidden;
+}
+
+.heading h1{
+    color: #ff6347;
+    font-size: 55px;
+    text-align: center;
+    margin-top: 35px;
+}
+
+.aboutMain{
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 90%;
+    margin: 65px auto;
+    z-index: 1;
+    
+}
+
+.aboutText{
+    flex: 1;
+    width: 600px;
+    margin: 0px 25px;
+    font-family: 'GARET';
+    font-size: small;
+    /* animation: fadeInUp 2s ease; */
+}
+
+.aboutText h2{
+    font-size: xx-large;
+    margin-bottom: 20px;
+    color: var(--darkTwo);
+    font-family: "GHeavy";
+}
+
+.aboutText p{
+    font-size: 24px;
+    line-height: 1.5;
+    margin-bottom: 40px;
+    color: var(--darkTwo);;
+}
+
+.aboutImage{
+    flex: 1;
+    width: 600px;
+    margin: auto;
+    /* animation: fadeInRight 2s ease; */
+}
+
+.aboutText button{
+    display: inline-block;
+    background-color: #ff4500;
+    color: #fff;
+    padding: 12px 24px;
+    border-radius: 4px;
+    font-size: 20px;
+    border: none;
+    cursor: pointer;
+    transition: 0.3s ease;
+}
+
+.aboutText button:hover{
+    background-color: #ff6347;
+    transform: scale(1.1);
+}
+
+img{
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+}
+
+#features .container{
     width: 100%;
     height: 100%;
-    /* padding: 70px 0; */
-    z-index: 10;
+    padding: 0 !important;
 }
 
-#aboutSection .aboutMain{
-    display: flex;
-    justify-content: space-evenly;
-}
-
-#aboutSection .aboutMain .image img{
-    width: 70%;
-    position: relative;
-    top: 60px;
-    margin-left: 40px;
-    border-radius: 20px;
-}
-
-#aboutSection .aboutMain .aboutMain{
-    text-transform: capitalize;
-    line-height: 1.4;
-}
-
-#aboutSection .aboutMain .aboutText
-{ 
-    width: auto;
+#features .container h1{
     text-align: center;
-    margin-top: 30px;
-    border-radius: 31px;
-    background: #e0e0e0;
-    box-shadow: 12px 12px 33px #c1c1c1, -12px -12px 33px #ffffff;
-}
-
-.dark #aboutSection .aboutMain .aboutText
-{
-    width: auto;
-    text-align: center;
-    margin-top: 30px;
-    border-radius: 31px;
-    background: rgb(72, 98, 115);
-    box-shadow: revert;
-}
-
-.dark #aboutSection .aboutMain .aboutText p{
-    color: (var(--lightOne));
-}
-
-#aboutSection h1{
-    font-size: 2.4rem !important;
-    margin-top: 100px;
-    color: var(--darkOne);
-    font-family: 'Poppins', sans-serif;
-    text-align: center;
-}
-
-#aboutSection .aboutMain .aboutText h1{
-    font-size: 1.4rem !important;
-    margin-top: 100px;
-    color: var(--darkOne);
-    font-family: 'Poppins', sans-serif;
-}
-
-#aboutSection .aboutMain .aboutText p{
+    padding-top: 70px;
     font-weight: 600;
-    font-size: 1.01rem;
-    margin: 1.9rem 0 2.5rem;
-    max-width: 600px;
-    line-height: 2.1;
-    color: var(--darkTwo);
-    font-family: "Garet";
+    margin-bottom: 10px;
+    position: relative;
+    color: var(--darkOne);
+    font-family: 'Poppins', sans-serif;
+}
+
+/* 
+#features .container h1:after{
+    content: '';
+    background-color: #30aef7;
+    width: 100px;
+    height: 5px;
+    position: absolute;
+    bottom: -5px;
+    left: 50%;
+    transform: translateX(-50%);
+} */
+
+#features .container .row{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    grid-gap: 30px;
+}
+
+#features .container .row .service{
+    text-align: center;
+    padding-top: 50px;
+    padding-bottom: 25px;
     padding-left: 10px;
     padding-right: 10px;
+    border-radius: 25px;
+    font-size: 14px;
+    cursor: pointer;
+    background: var(--mainColor);
+    transition: transform 0.5s, background 0.5s !important;
+}
+
+#features .container .row .service p{
+    color: transparent;
+    font-family: "Garet";
+}
+
+#features .container .row .service:hover p{
+    color: revert;
+}
+
+#features .container .row .service i{
+    font-size: 40px;
+    margin-bottom: 10px;
+    color: #084284;
+}
+
+#features .container .row .service h2{
+    color: #000;
+    font-weight: 600;
+    margin-bottom: 8px;
+}
+
+#features .container .row .service:hover{
+    background: #19aff3ff;
+    color: #fff;
+    transform: scale(1.06);
+}
+
+#features .container .row .service:hover h2{
+    color: #fff;
+}
+
+#features .container .row .service:hover i{
+    color: #fff;
 }
 
 @keyframes appear{
@@ -492,27 +577,66 @@ header .container{
     }
 
   }
-  
-  @media screen and (max-width: 470px) {
-    .container {
-      padding: 0 1.5rem;
+
+  @media screen and (max-width: 768px){
+    .heading h1{
+        font-size: 45px;
+        margin-top: 30px;
     }
 
-    .leftCircle{
-        clip-path: circle(7000px at right 500px);
+    #aboutSection{
+        margin: 0px;
     }
 
-    #aboutSection .aboutMain{
-        display: flex;
-        justify-content: space-around;
-        align-items: center;
-        text-align: center;
+    .aboutMain{
+        width: 100%;
         flex-direction: column;
+        margin: 0px;
+        padding: 0px 40px;
     }
 
-    #aboutSection .aboutMain .aboutText p{
-        padding-right: 10px;
-        padding-left: 10px;
+    .aboutText{
+        width: 100%;
+        margin: 35px 0px;
     }
-  
-  }
+
+    .aboutText h2{
+        font-size: 30px;
+    }
+
+    .aboutText p{
+        font-size: 18px;
+        margin-bottom: 20px;
+    }
+
+    .aboutText button{
+        font-size: 16px;
+        padding: 8px 16px;
+    }
+
+    .aboutImage{
+        width: 100%;
+    }
+}
+ 
+  /* @keyframes fadeInUp{
+    0%{
+        opacity: 0;
+        transform: translateY(50px);
+    }
+    100%{
+        opacity: 1;
+        transform: translateY(0px);
+    }
+}
+
+@keyframes fadeInRight{
+    0%{
+        opacity: 0;
+        transform: translateX(-50px);
+    }
+    100%{
+        opacity: 1;
+        transform: translateX(0px);
+    }
+} */

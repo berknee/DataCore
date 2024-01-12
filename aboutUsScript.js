@@ -34,7 +34,7 @@ function toggleAnimation(){
     document.body.classList.add("stopScrolling");
 
     clone.addEventListener("animationend", () => {
-        // console.log("test");
+        console.log("test");
         document.body.classList.remove("stopScrolling");
         landingPage.remove();
         clone.classList.remove("copy");
