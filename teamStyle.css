@@ -357,7 +357,7 @@ header .container{
 }
 
 #team .card p{
-    color: orangered;
+    color: #100 (255, 17, 0);
     text-align: center;
     font-family: "Garet";
 }

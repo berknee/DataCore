@@ -318,7 +318,7 @@ header .container{
 }
 
 #features .container .planLink{
-    color: var(--darkOne);
+    color: var(--mainColor);
     text-decoration: none;
     font-size: small;
     text-align: center;
