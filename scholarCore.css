@@ -1,5 +1,15 @@
 @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500&family=Poppins:wght@200;300;400;500;600;700;800&display=swap');
 
+@font-face {
+    font-family: 'GARET';
+    src: url("resources/Garet-Book.ttf") format("truetype");
+}
+
+@font-face {
+    font-family: 'GHeavy';
+    src: url("resources/Garet-Heavy.ttf") format("truetype");
+}
+
 .light{
     --mainColor: #64bcf4;
     --hoverColor: #5bacdf;
@@ -8,7 +18,9 @@
     --darkTwo: #45424b;
     --lightOne: #919191;
     --lightTwo: #aaa;
+    --lightThree: #615c5c;
     --circle: #b7d2f5;
+    --circle-yellow: #feff99;
 }
 
 .dark{
@@ -19,7 +31,9 @@
     --darkTwo: #fff;
     --lightOne: #ccc;
     --lightTwo: #e7e3e3;
+    --lightThree: #ccc;
     --circle: #213c4dff;
+    --circle-yellow: #feff99;
 }
 
 *,
@@ -40,13 +54,18 @@ body{
     font-family: 'Poppins', sans-serif;
 }
 
-.overlay{
-    display: none;
-}
-
 .stopScrolling{
     height: 100%;
     overflow: hidden;
+}
+
+.title .typeWriter h1{
+    margin-inline-end: 50px !important;
+    animation: typing 1s steps(25), blink 1s infinite;
+    letter-spacing: 4px;
+    overflow: hidden;
+    white-space: nowrap;
+    border-right: 4px solid #ccc;
 }
 
 img{
@@ -55,6 +74,48 @@ img{
 
 a{
     text-decoration: none;
+}
+
+.leftCircle{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: var(--circle);
+    clip-path: circle(600px at right 800px);
+}
+
+.leftCircleYellow{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: var(--circle-yellow);
+    clip-path: circle(600px at right 800px);    
+}
+
+.socialMediaIcons{
+    position: absolute;
+    top: 50%;
+    right: 30px;
+    transform: translateY(-50%);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    z-index: 60;
+}
+
+.socialMediaIcons li{
+    list-style: none;
+}
+
+.socialMediaIcons li a{
+    display: inline-block;
+    margin: 5px 0;
+    transform: scale(0.6);
 }
 
 .landingPage{
@@ -66,6 +127,7 @@ a{
     background-color: var(--backgroundColor);
     display: flex;
     flex-direction: column;
+    justify-content: space-between;
 }
 
 .container{
@@ -121,9 +183,13 @@ header .container{
 
 .navButtons a{
     color: var(--lightTwo);
-    margin-left: 4.5rem;
+    margin-left: 3rem;
     display: inline-block;
     transition: 0.3s;
+}
+
+.shop{
+    font-size: larger;
 }
 
 .navButtons a:hover{
@@ -185,6 +251,7 @@ header .container{
 
 .button{
     display: inline-block;
+    font-family: 'GARET';
     padding: 0.9rem 1.9rem;
     color: #fff !important;
     background-color: var(--mainColor);
@@ -198,45 +265,55 @@ header .container{
     transform: scale(1) !important;
 }
 
-.shape{
-    position: absolute;
-    z-index: 0;
-    width: 500px;
-    bottom: -180px;
-    left: -15px;
-    opacity: 0.1;
-}
-
-.leftCircle{
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: var(--circle);
-    clip-path: circle(600px at right 800px);
-}
-
-.socialMediaIcons{
-    position: absolute;
-    top: 50%;
-    right: 30px;
-    transform: translateY(-50%);
-    display: flex;
-    justify-content: center;
+.showCaseArea .container{
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
     align-items: center;
-    flex-direction: column;
-    z-index: 10;
+    justify-content: center;
 }
 
-.socialMediaIcons li{
-    list-style: none;
-}
-
-.socialMediaIcons li a{
+.title{
+    font-size: 1.4rem;
+    color: var(--darkOne);
+    text-transform: capitalize;
+    line-height: 1.4;
     display: inline-block;
-    margin: 5px 0;
-    transform: scale(0.6);
+}
+
+.title h2{
+    font-size: 1.4rem !important;
+}
+
+.text{
+    color: var(--lightOne);
+    font-size: 1.1rem;
+    margin: 1.9rem 0 2.5rem;
+    max-width: 600px;
+    line-height: 2.3;
+    font-family: "GARET";
+}
+
+.disclaimer em{
+    display: flex;
+    color: var(--lightThree);
+    font-size: 1.1rem;
+    line-height: 2.3;
+    align-items: center;
+    justify-content: center;
+    z-index: 66;
+    position: relative;
+    text-align: center;
+    font-family: "GHeavy";
+}
+
+.showCaseArea .button{
+    box-shadow: 0 0 40px 2px rgba(0, 0, 0, 0.05);
+}
+
+.mainPageImg{
+    width: 109%;
+    
+    transform: translate(-10%, 50px);
 }
 
 .toggleBtn{
@@ -251,6 +328,7 @@ header .container{
     border-radius: 50%;
     font-size: 1.1rem;
     transition: 0.3s;
+    z-index: 60;
 }
 
 .toggleBtn i{
@@ -281,116 +359,21 @@ header .container{
     display: none;
 }
 
+.shape{
+    position: absolute;
+    z-index: 0;
+    width: 500px;
+    bottom: -180px;
+    left: -15px;
+    opacity: 0.1;
+}
+
 .copy{
     position: absolute;
     top: 0;
     left: 0;
     z-index: 100;
     animation: appear 1s 1 both;
-}
-
-#contactSection{
-    width: 100%;
-	height: 100%;
-    padding-top: 32.5px;
-    margin-bottom: 70px;
-    z-index: 10;
-}
-
-#contactSection.show::before{
-    opacity: 1;
-    pointer-events: auto;
-}
-
-#contactSection h1{
-    font-size: 55px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin-top: 70px;
-    color: var(--darkOne);
-}
-
-#contactSection p{
-    font-size: 23px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    color: var(--darkTwo);
-}
-
-#contactSection .contactBox{
-    width: 100%;
-    height: 100%;
-    background-size: cover;
-    background-position: center;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin-top: 20px;
-    z-index: 90;
-    margin-bottom: 90px;
-}
-
-#contactSection form{
-    width: 90%;
-    max-width: 600px;
-}
-
-#contactSection .inputGroup{
-    margin-bottom: 30px;
-    position: relative;
-}
-
-#contactSection input, textarea{
-    width: 100%;
-    padding: 10px;
-    outline: 0;
-    border: 1px solid #19aff3ff;
-    color: #1fddc3ff;
-    background: transparent;
-    font-size: 15px;
-}
-
-#contactSection label{
-    height: 100%;
-    position: absolute;
-    left: 0;
-    top: 0;
-    padding: 10px;
-    color: #19ccd7ff;
-    cursor: text;
-    transition: 0.2s;
-    background-color: transparent;
-}
-
-#contactSection button{
-    padding: 10px;
-    color: #19ccd7ff;
-    outline: 0;
-    background: transparent;
-    border: 1px solid #19aff3ff;
-    width: 100%;
-    cursor: pointer;
-    font-size: 15px;
-}
-
-#contactSection input:focus~label,
-#contactSection input:valid~label,
-#contactSection textarea:focus~label,
-#contactSection textarea:valid~label{
-    top: -35px;
-    font-size: 14px;
-}
-
-#contactSection .contactRow{
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-}
-
-#contactSection .contactRow .inputGroup{
-    flex-basis: 48%;
 }
 
 @keyframes appear{
@@ -402,6 +385,33 @@ header .container{
     }
 }
 
+@keyframes typing{
+    from {
+        width: 0%;
+    }
+    to{
+        width: 100%;
+    }
+}
+
+@keyframes typingBack{
+    from {
+        width: 100%;
+    }
+    to{
+        width: 0%;
+    }
+}
+
+@keyframes blink{
+    from, to{
+        border-color: transparent;
+    }
+    50%{
+        border-color: #ccc;
+    }
+}
+
 @media screen and (max-width: 870px) {
 
     .hamburgerMenu {
@@ -410,7 +420,7 @@ header .container{
 
     .socialMediaIcons{
         flex-direction: row;
-        top: 98%;
+        top: 94%;
     }
   
     .navButtons {
@@ -466,6 +476,32 @@ header .container{
       opacity: 1;
     }
   
+    .showCaseArea {
+      padding: 2.5rem 0;
+      max-width: 700px;
+      margin: 0 auto;
+    }
+  
+    .showCaseArea .container {
+      grid-template-columns: 1fr;
+      justify-content: center;
+      grid-gap: 2rem;
+    }
+  
+    .title {
+      font-size: 1.1rem;
+    }
+  
+    .text {
+      font-size: 0.95rem;
+      margin: 1.4rem 0 1.5rem;
+    }
+  
+    .mainPageImg {
+      width: 100%;
+      transform: none;
+    }
+  
     .logo h3 {
       font-size: 1.25rem;
     }
@@ -473,13 +509,11 @@ header .container{
     .shape {
       bottom: -180px;
       left: -150px;
-      z-index: 2;
     }
 
     .leftCircle{
-        clip-path: circle(10000px at right 2000px);
+        clip-path: circle(800px at right 1300px);
     }
-
   }
   
   @media screen and (max-width: 470px) {
@@ -488,7 +522,18 @@ header .container{
     }
 
     .leftCircle{
-        clip-path: circle(800px at right 500px);
+        clip-path: circle(550px at right 1000px);
     }
   
-  }
+    .title {
+      font-size: 0.9rem;
+    }
+  
+    .text {
+      margin: 1.1rem 0 1.5rem;
+    }
+  
+    .showCaseArea .button {
+      font-size: 0.8rem;
+    }
+}
